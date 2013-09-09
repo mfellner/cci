@@ -5,31 +5,39 @@
  
 namespace mfellner {
 
-  bool LinkedList::Add(E e) {
+  template <class E>
+  bool LinkedList<E>::Add(E* e) {
       return false;
   }
 
-  void LinkedList::Add(int index, E* e) {
+  template <class E>
+  void LinkedList<E>::Add(int index, E* e) {
   }
-
-  void LinkedList::AddFirst(E* e) {
+  
+  template <class E>
+  void LinkedList<E>::AddFirst(E* e) {
   }
-
-  void LinkedList::AddLast(E* e) {
+  
+  template <class E>
+  void LinkedList<E>::AddLast(E* e) {
   }
-
-  void LinkedList::Clear() {
+  
+  template <class E>
+  void LinkedList<E>::Clear() {
   }
-
-  E* LinkedList::Get(int index) {
+  
+  template <class E>
+  E* LinkedList<E>::Get(int index) {
       return NULL;
   }
-
-  E* LinkedList::GetFirst() {
+  
+  template <class E>
+  E* LinkedList<E>::GetFirst() {
       return NULL;
   }
-
-  E* LinkedList::GetLast() {
+  
+  template <class E>
+  E* LinkedList<E>::GetLast() {
       return NULL;
   }
 
