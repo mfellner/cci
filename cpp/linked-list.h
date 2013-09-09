@@ -33,11 +33,11 @@ class LinkedList {
    E* GetLast();
 
  private:
-   // // An element in the linked list.
-   // typedef struct ListElement {
-   //   E* next;
-   //   E* data;
-   // } ListElement;
+   // An element in the linked list.
+   typedef struct ListElement {
+     E* next;
+     E* data;
+   } ListElement;
 };
 
 }
