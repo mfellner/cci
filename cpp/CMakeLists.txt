@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
 project(Cpp-Test)
 
+file(GLOB SOURCES *.cpp)
+
 ################################
 # GTest
 ################################
@@ -29,7 +31,8 @@ include_directories(${source_dir}/include)
 # Unit Tests
 ################################
 
-add_executable(MainTest ${PROJECT_SOURCE_DIR}/main.cpp)
+file(GLOB sources *.h *.c *.cc *.cxx *.cpp *.hxx)
+add_executable(MainTest ${sources})
 
 ################################
 # Dependencies
