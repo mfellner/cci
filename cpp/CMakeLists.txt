@@ -1,14 +1,12 @@
 cmake_minimum_required(VERSION 2.8)
-project(Cpp-Test)
+project(cpp-test CXX)
 
-file(GLOB SOURCES *.cpp)
-
-################################
+################################################################################
 # GTest
-################################
+################################################################################
 
 include(ExternalProject)
-set_directory_properties(PROPERTIES EP_PREFIX ${CMAKE_BINARY_DIR}/ThirdParty)
+set_directory_properties(PROPERTIES EP_PREFIX ${CMAKE_BINARY_DIR}/vendor)
 
 ExternalProject_Add(
     googletest
@@ -19,27 +17,27 @@ ExternalProject_Add(
     UPDATE_COMMAND ""
     # Skip install step
     INSTALL_COMMAND ""
-    # Wrap download, configure and build steps in a script to log output
     LOG_DOWNLOAD ON
     LOG_CONFIGURE ON
-    LOG_BUILD ON)
+    LOG_BUILD ON
+)
 
+ExternalProject_Get_Property(googletest binary_dir)
 ExternalProject_Get_Property(googletest source_dir)
 include_directories(${source_dir}/include)
 
-################################
+################################################################################
 # Unit Tests
-################################
+################################################################################
 
-file(GLOB sources *.h *.c *.cc *.cxx *.cpp *.hxx)
-add_executable(MainTest ${sources})
+file(GLOB sources *.h *.cc *.cxx *.cpp *.hxx)
+add_executable(main ${sources})
+add_dependencies(main googletest)
+add_custom_target(test COMMAND main)
+set_target_properties(main PROPERTIES LINKER_LANGUAGE CXX)
 
-################################
-# Dependencies
-################################
-
-add_dependencies(MainTest googletest)
-ExternalProject_Get_Property(googletest binary_dir)
-target_link_libraries(MainTest
-                      ${binary_dir}/${CMAKE_FIND_LIBRARY_PREFIXES}gtest${CMAKE_STATIC_LIBRARY_SUFFIX}
-                      ${binary_dir}/${CMAKE_FIND_LIBRARY_PREFIXES}gtest_main${CMAKE_STATIC_LIBRARY_SUFFIX})
+target_link_libraries(
+    main
+    ${binary_dir}/${CMAKE_FIND_LIBRARY_PREFIXES}gtest${CMAKE_STATIC_LIBRARY_SUFFIX}
+    ${binary_dir}/${CMAKE_FIND_LIBRARY_PREFIXES}gtest_main${CMAKE_STATIC_LIBRARY_SUFFIX}
+)

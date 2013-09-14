@@ -1,3 +1,8 @@
 c/build
 cpp/build
 gtest-1.7.0/build
+
+.idea/
+*.iml
+
+.DS_Store

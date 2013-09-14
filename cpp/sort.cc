@@ -33,7 +33,6 @@ void Sort::MSortMerge(int i, int k, int j, int a[]) {
   int n = j - i + 1;
   int b[n];
 
-  // std::cout << "i:" << i << " k:" << k << " j:" << j << " --------" << std::endl;
   for (int m = 0, l = i, r = k + 1; m < n; m++) {
     if (r > j || (l <= k && a[l] < a[r])) {
       b[m] = a[l];

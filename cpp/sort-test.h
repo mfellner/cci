@@ -11,12 +11,6 @@ using namespace mfellner;
 ////////////////////////////////////////
 // Merge Sort Recursive
 ////////////////////////////////////////
-// TEST(MergeSortTest, SortSmall) {
-//   int a[4] = {7,4,8,2};
-//   Sort::MergeSortRecursive(4, a);
-//   Sort::ArrayPrint(4, a, "a");
-// }
-
 TEST(MergeSortRecursive, SortPositive) {
   int a[10] = {7,4,8,2,9,0,1,5,3,6};
 
@@ -50,12 +44,6 @@ TEST(MergeSortRecursive, SortMixed) {
 ////////////////////////////////////////
 // Merge Sort Iterative
 ////////////////////////////////////////
-// TEST(MergeSortIterative, SortSmall) {
-//   int a[3] = {3,2,1};//,2,1,0,-1};
-//   Sort::MergeSortIterative(3, a);
-//   Sort::ArrayPrint(3, a, "a");
-// }
-
 TEST(MergeSortIterative, SortPositive) {
   int a[10] = {7,4,8,2,9,0,1,5,3,6};
 
