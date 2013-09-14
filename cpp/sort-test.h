@@ -11,6 +11,11 @@ using namespace mfellner;
 ////////////////////////////////////////
 // Merge Sort Recursive
 ////////////////////////////////////////
+TEST(MergeSortTest, SortSmall) {
+  int a[4] = {7,4,8,2};
+  Sort::MergeSortRecursive(4, a);
+}
+
 TEST(MergeSortTest, SortPositive) {
   int a[10] = {7,4,8,2,9,0,1,5,3,6};
 

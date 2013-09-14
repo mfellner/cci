@@ -21,24 +21,21 @@ void Sort::MSortSplit(int i, int j, int a[]) {
 }
 
 void Sort::MSortMerge(int i, int k, int j, int a[]) {
-  int pn = k - i + 1;
-  int qn = j - k;
-  int p[pn], q[qn];
+  int n = j - i + 1;
+  int b[n];
 
-  memcpy(p, &a[i    ], sizeof(p));
-  memcpy(q, &a[k + 1], sizeof(q));
-
-  for (int m = i, l = 0, r = 0; m <= j; m++) {
-    if (qn == 0 || (pn > 0 && p[l] < q[r])) {
-      a[m] = p[l];
-      pn--;
+  // std::cout << "i:" << i << " k:" << k << " j:" << j << " --------" << std::endl;
+  for (int m = 0, l = i, r = k + 1; m < n; m++) {
+    if (r > j || (l <= k && a[l] < a[r])) {
+      b[m] = a[l];
       l++;
     } else {
-      a[m] = q[r];
-      qn--;
+      b[m] = a[r];
       r++;
     }
   }
+
+  memcpy(&a[i], b, sizeof(b));
 }
 
 void Sort::ArrayPrint(int n, int a[n], const char* s) {
