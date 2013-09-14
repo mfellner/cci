@@ -3,6 +3,7 @@
 #include "sort.h"
 #include <string.h>
 #include <iostream>
+#include <algorithm>
 
 namespace mfellner {
 
@@ -17,6 +18,14 @@ void Sort::MSortSplit(int i, int j, int a[]) {
     MSortSplit(    i, k, a);
     MSortSplit(1 + k, j, a);
     MSortMerge( i, k, j, a);
+  }
+}
+
+void Sort::MergeSortIterative(int n, int a[n]) {
+  for (int w = 1; w < n; w = w * 2) {
+    for (int i = 0; i < n; i = i + w * 2) {
+      MSortMerge(i, i + w - 1, std::min(i + w * 2, n) - 1, a);
+    }
   }
 }
 

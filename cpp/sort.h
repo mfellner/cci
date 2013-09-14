@@ -9,6 +9,8 @@ class Sort {
  public:
    static void MergeSortRecursive(int, int[]);
 
+   static void MergeSortIterative(int, int[]);
+
    static void ArrayPrint(int, int[], const char*);
 
  private:
