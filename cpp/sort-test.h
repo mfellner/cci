@@ -1,4 +1,4 @@
-// Copyright 2013, Maximilian Fellner
+// Copyright 2014, Maximilian Fellner
 
 #ifndef SORT_TEST_H_
 #define SORT_TEST_H_

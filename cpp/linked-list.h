@@ -1,4 +1,4 @@
-// Copyright 2013, Maximilian Fellner
+// Copyright 2014, Maximilian Fellner
 
 #ifndef LINKED_LIST_H_
 #define LINKED_LIST_H_
@@ -78,7 +78,7 @@ class LinkedList {
        head_ = element;
      } else {
        head_ = element;
-     } 
+     }
    }
 
    // Appends the specified element to the end of this list.
@@ -93,7 +93,7 @@ class LinkedList {
        tail->next = element;
      } else {
        head_ = element;
-     } 
+     }
    }
 
    // Removes all of the elements from this list.
@@ -150,7 +150,7 @@ class LinkedList {
    E* Remove(int index) {
      if (index < 0)
        throw std::out_of_range(StringWithInt("invalid index ", index));
-   
+
      if (head_ && index > 0) {
        ListElement* element = head_;
        ListElement* before  = 0;

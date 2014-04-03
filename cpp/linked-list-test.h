@@ -1,4 +1,4 @@
-// Copyright 2013, Maximilian Fellner
+// Copyright 2014, Maximilian Fellner
 
 #ifndef LINKED_LIST_TEST_H_
 #define LINKED_LIST_TEST_H_

@@ -1,13 +1,5 @@
-Exercises with basic data structures and algorithms in C, C++ and Java.
+### Programming Exercises
 
-This code is licensed under the GPLv3 because you should **never** actually use it.
+These are just personal exercises with basic data structures and algorithms in C++ and Java.
 
-### To build the C++ tests:
-
-```
-cd cpp
-mkdir build
-cd build
-cmake ../.
-make
-```
+All source code is licensed under the GPLv3 because you should **not** actually use it ;)

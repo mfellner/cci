@@ -1,4 +1,4 @@
-// Copyright 2013, Maximilian Fellner
+// Copyright 2014, Maximilian Fellner
 
 #include "sort.h"
 #include <string.h>
