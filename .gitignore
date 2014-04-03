@@ -2,6 +2,8 @@ c/build
 cpp/build
 gtest-1.7.0/build
 
+*.class
+
 .idea/
 *.iml
 
